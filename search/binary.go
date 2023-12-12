@@ -13,18 +13,21 @@ func Binary(iterable []int, item int) (index int) {
 	end := len(iterable) - 1
 
 	for start <= end {
-		middle := (start + end) / 2
-		guess := iterable[middle]
+		middleIndex := (start + end) / 2
+		guess := iterable[middleIndex]
 
 		if guess == item {
-			return middle
+			return middleIndex
 		}
 
+		// guess is too low! adjust the minimum range.
 		if guess < item {
-			start = middle + 1
-		} else {
-			end = middle - 1
+			start = middleIndex + 1
+			continue
 		}
+
+		// guess is too high! adjust the maximum range.
+		end = middleIndex - 1
 	}
 
 	return -1

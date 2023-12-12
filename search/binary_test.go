@@ -8,7 +8,7 @@ import (
 func TestBinarySearch(t *testing.T) {
 	in := []int{1, 2, 3, 4, 5, 6, 7, 8, 9}
 
-	t.Run("item is 6, index should be 6", func(t *testing.T) {
+	t.Run("item is 7, index should be 6", func(t *testing.T) {
 		want := 6
 		got := search.Binary(in, 7)
 
@@ -23,8 +23,8 @@ func TestBinarySearch(t *testing.T) {
 	})
 
 	t.Run("item is 9, index should be 8", func(t *testing.T) {
-		want := 0
-		got := search.Binary(in, 1)
+		want := 8
+		got := search.Binary(in, 9)
 
 		assertIndex(t, want, got)
 	})
