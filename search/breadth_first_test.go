@@ -9,7 +9,7 @@ func TestBreadthFirstSearch(t *testing.T) {
 	tests := []struct {
 		name    string
 		myName  string
-		friends search.Graph
+		friends search.FriendsGraph
 		want    string
 	}{
 		{
@@ -21,13 +21,13 @@ func TestBreadthFirstSearch(t *testing.T) {
 		{
 			name:    "I have no friends (empty)",
 			myName:  "myself",
-			friends: make(search.Graph),
+			friends: make(search.FriendsGraph),
 			want:    "",
 		},
 		{
 			name:   "bob is the immediate friend who sells mangoes",
 			myName: "myself",
-			friends: search.Graph{
+			friends: search.FriendsGraph{
 				"myself": []string{"claire", "bob", "peggy"},
 			},
 			want: "bob",
@@ -35,7 +35,7 @@ func TestBreadthFirstSearch(t *testing.T) {
 		{
 			name:   "caleb is the closest person who sells mangoes",
 			myName: "myself",
-			friends: search.Graph{
+			friends: search.FriendsGraph{
 				"myself": []string{"claire", "johnny", "peggy"},
 				"johnny": []string{"tom", "clarke", "caleb"},
 			},
@@ -44,7 +44,7 @@ func TestBreadthFirstSearch(t *testing.T) {
 		{
 			name:   "there's no mango seller amongst friends",
 			myName: "myself",
-			friends: search.Graph{
+			friends: search.FriendsGraph{
 				"myself": []string{"claire", "rachel", "peggy"},
 			},
 			want: "",

@@ -2,8 +2,9 @@ package search
 
 import "slices"
 
-// Graph represents a simple graph data structure.
-type Graph map[string][]string
+// FriendsGraph represents a simple graph data structure for
+// the BFS algorithm implementation.
+type FriendsGraph map[string][]string
 
 // BreadthFirstSearch (BFS) uses graphs to get the shortest path
 // between two objects, not necessarily the faster (see the Dijkstra Algorithm).
@@ -17,7 +18,7 @@ type Graph map[string][]string
 // Note: the mango seller is anyone whose name ends with the letter "b".
 //
 // Execution time: O(V+E) (total number of Vertices + Edges)
-func BreadthFirstSearch(myName string, friends Graph) string {
+func BreadthFirstSearch(myName string, friends FriendsGraph) string {
 	var searchQueue []string
 	// initialize the queue if all my immediate friends
 	searchQueue = append(searchQueue, friends[myName]...)
