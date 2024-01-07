@@ -1,4 +1,4 @@
-package recursivity
+package recursion
 
 // Factorial calculates the factorial of num.
 func Factorial(num uint) uint {

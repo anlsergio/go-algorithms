@@ -1,4 +1,4 @@
-package recursivity
+package recursion
 
 // Fibonacci returns the nth number according to the
 // Fibonacci's sequence, given the kickoff sequence:

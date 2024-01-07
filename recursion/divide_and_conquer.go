@@ -1,4 +1,4 @@
-package recursivity
+package recursion
 
 // Sum takes in a slice of numbers and returns the sum of all items.
 func Sum(numbers []int) int {

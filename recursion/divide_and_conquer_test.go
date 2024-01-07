@@ -1,8 +1,8 @@
-package recursivity_test
+package recursion_test
 
 import (
 	"fmt"
-	"github.com/anlsergio/go-algorithms/recursivity"
+	"github.com/anlsergio/go-algorithms/recursion"
 	"testing"
 )
 
@@ -31,7 +31,7 @@ func TestSum(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("in: %v", tc.in), func(t *testing.T) {
-			got := recursivity.Sum(tc.in)
+			got := recursion.Sum(tc.in)
 			if tc.want != got {
 				t.Errorf("want %d, got %d", tc.want, got)
 			}
@@ -56,7 +56,7 @@ func TestCountItems(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("in: %v", tc.in), func(t *testing.T) {
-			got := recursivity.CountItems(tc.in)
+			got := recursion.CountItems(tc.in)
 			if tc.want != got {
 				t.Errorf("want %d, got %d", tc.want, got)
 			}
@@ -93,7 +93,7 @@ func TestBiggestNumber(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("in: %v", tc.in), func(t *testing.T) {
-			got := recursivity.BiggestNumber(tc.in)
+			got := recursion.BiggestNumber(tc.in)
 			if tc.want != got {
 				t.Errorf("want %d, got %d", tc.want, got)
 			}
@@ -123,7 +123,7 @@ func TestBinarySearch(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(tc.name, func(t *testing.T) {
-			got := recursivity.BinarySearch(iterable, tc.in)
+			got := recursion.BinarySearch(iterable, tc.in)
 			if tc.want != got {
 				t.Errorf("want %t, got %t", tc.want, got)
 			}
@@ -131,7 +131,7 @@ func TestBinarySearch(t *testing.T) {
 	}
 
 	t.Run("empty iterable", func(t *testing.T) {
-		found := recursivity.BinarySearch(make([]int, 0), 1)
+		found := recursion.BinarySearch(make([]int, 0), 1)
 		if found {
 			t.Error("expected 'found' to be false")
 		}

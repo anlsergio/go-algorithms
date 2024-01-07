@@ -1,8 +1,8 @@
-package recursivity_test
+package recursion_test
 
 import (
 	"fmt"
-	"github.com/anlsergio/go-algorithms/recursivity"
+	"github.com/anlsergio/go-algorithms/recursion"
 	"testing"
 )
 
@@ -43,7 +43,7 @@ func TestFibonacci(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("in: %d", tc.in), func(t *testing.T) {
-			got := recursivity.Fibonacci(tc.in)
+			got := recursion.Fibonacci(tc.in)
 			if tc.want != got {
 				t.Errorf("want %d, got %d", tc.want, got)
 			}

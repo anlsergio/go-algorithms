@@ -1,8 +1,8 @@
-package recursivity_test
+package recursion_test
 
 import (
 	"fmt"
-	"github.com/anlsergio/go-algorithms/recursivity"
+	"github.com/anlsergio/go-algorithms/recursion"
 	"testing"
 )
 
@@ -23,7 +23,7 @@ func TestFactorial(t *testing.T) {
 
 	for _, tc := range tests {
 		t.Run(fmt.Sprintf("factorial of %d", tc.in), func(t *testing.T) {
-			got := recursivity.Factorial(tc.in)
+			got := recursion.Factorial(tc.in)
 			if tc.want != got {
 				t.Errorf("want %d, got %d", tc.want, got)
 			}
